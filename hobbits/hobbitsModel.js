@@ -5,11 +5,13 @@ module.exports = {
   update,
   remove,
   getAll,
-  findById,
+  findById
 };
 
 async function insert(hobbit) {
-  return null;
+  return db('hobbits')
+    .insert(hobbit)
+    .returning('id');
 }
 
 async function update(id, changes) {
